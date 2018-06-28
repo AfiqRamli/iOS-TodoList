@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		CAB2F61820E46AEF0010C343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2F61720E46AEF0010C343 /* AppDelegate.swift */; };
-		CAB2F61A20E46AEF0010C343 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2F61920E46AEF0010C343 /* ViewController.swift */; };
+		CAB2F61A20E46AEF0010C343 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2F61920E46AEF0010C343 /* HomeViewController.swift */; };
 		CAB2F61D20E46AEF0010C343 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB2F61B20E46AEF0010C343 /* Main.storyboard */; };
 		CAB2F61F20E46AF10010C343 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB2F61E20E46AF10010C343 /* Assets.xcassets */; };
 		CAB2F62220E46AF10010C343 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB2F62020E46AF10010C343 /* LaunchScreen.storyboard */; };
+		CAB2F62D20E471400010C343 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2F62C20E471400010C343 /* AddItemViewController.swift */; };
+		CAB2F62F20E477AE0010C343 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2F62E20E477AE0010C343 /* TodoItem.swift */; };
+		CAB2F63120E47E5B0010C343 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2F63020E47E5B0010C343 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CAB2F61420E46AEF0010C343 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB2F61720E46AEF0010C343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAB2F61920E46AEF0010C343 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAB2F61920E46AEF0010C343 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CAB2F61C20E46AEF0010C343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAB2F61E20E46AF10010C343 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAB2F62120E46AF10010C343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAB2F62320E46AF10010C343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAB2F62C20E471400010C343 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		CAB2F62E20E477AE0010C343 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		CAB2F63020E47E5B0010C343 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		CAB2F61620E46AEF0010C343 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				CAB2F61720E46AEF0010C343 /* AppDelegate.swift */,
-				CAB2F61920E46AEF0010C343 /* ViewController.swift */,
+				CAB2F62B20E46BFF0010C343 /* Model */,
+				CAB2F62A20E46BF80010C343 /* View */,
+				CAB2F62920E46BEB0010C343 /* Controller */,
 				CAB2F61B20E46AEF0010C343 /* Main.storyboard */,
 				CAB2F61E20E46AF10010C343 /* Assets.xcassets */,
-				CAB2F62020E46AF10010C343 /* LaunchScreen.storyboard */,
 				CAB2F62320E46AF10010C343 /* Info.plist */,
 			);
 			path = TodoList;
+			sourceTree = "<group>";
+		};
+		CAB2F62920E46BEB0010C343 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2F61720E46AEF0010C343 /* AppDelegate.swift */,
+				CAB2F61920E46AEF0010C343 /* HomeViewController.swift */,
+				CAB2F62C20E471400010C343 /* AddItemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CAB2F62A20E46BF80010C343 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2F62020E46AF10010C343 /* LaunchScreen.storyboard */,
+				CAB2F63020E47E5B0010C343 /* ListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAB2F62B20E46BFF0010C343 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2F62E20E477AE0010C343 /* TodoItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAB2F61A20E46AEF0010C343 /* ViewController.swift in Sources */,
+				CAB2F61A20E46AEF0010C343 /* HomeViewController.swift in Sources */,
 				CAB2F61820E46AEF0010C343 /* AppDelegate.swift in Sources */,
+				CAB2F62D20E471400010C343 /* AddItemViewController.swift in Sources */,
+				CAB2F62F20E477AE0010C343 /* TodoItem.swift in Sources */,
+				CAB2F63120E47E5B0010C343 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.afiqramli.TodoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.afiqramli.TodoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
