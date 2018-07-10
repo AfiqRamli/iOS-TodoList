@@ -10,6 +10,27 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     
+    var todoItem: Task? {
+        didSet {
+            if let title = todoItem?.title {
+                titleLabel.text = title
+            }
+            
+            if let category = todoItem?.category {
+                
+                switch category {
+                case "work":
+                    categoryColorDot.backgroundColor = .red
+                case "private":
+                    categoryColorDot.backgroundColor = .blue
+                default:
+                    categoryColorDot.backgroundColor = .black
+                }
+                
+            }
+        }
+    }
+    
     let iconImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .red
@@ -17,10 +38,18 @@ class ListTableViewCell: UITableViewCell {
         return iv
     }()
     
+    let categoryColorDot: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "To do Title here or anything"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -36,19 +65,19 @@ class ListTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        self.addSubview(iconImageView)
+        self.addSubview(categoryColorDot)
         self.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            iconImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            iconImageView.heightAnchor.constraint(equalToConstant: 40),
-            iconImageView.widthAnchor.constraint(equalToConstant: 40)
+            categoryColorDot.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            categoryColorDot.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            categoryColorDot.heightAnchor.constraint(equalToConstant: 10),
+            categoryColorDot.widthAnchor.constraint(equalToConstant: 10)
             ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: iconImageView.topAnchor),
-            titleLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 15),
+            titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: categoryColorDot.rightAnchor, constant: 15),
             titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor)
             ])
     }

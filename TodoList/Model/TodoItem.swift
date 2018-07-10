@@ -8,12 +8,21 @@
 
 import Foundation
 
-struct TodoItem {
+class TodoItem: NSObject{
     
     var id: String
     var title: String
-    var icon: String?
-    var date: String
+    var detail: String?
+//    var date: Date
+    var category: String
     var isChecked: Bool = false
+    
+    init(id: String, title: String, detail: String?, category: String) {
+        self.id = id
+        self.title = title
+        self.detail = detail
+//        self.date = date
+        self.category = category
+    }
     
 }
